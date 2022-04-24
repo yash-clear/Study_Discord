@@ -1,0 +1,31 @@
+{% extends 'C:\Users\HP\Downloads\studybud\templates\main.html' %}
+
+{% block content %}
+
+<style>
+    .home-container{
+        display:grid;
+        grid-template-columns: 1fr 2fr  1fr;
+    }
+</style>
+
+<div class = "home-container">
+    
+    <div>
+        {% include 'base/topics.html' %}
+    </div>
+    <div> 
+    <div>
+        <h5>{{room_count}} rooms available</h5>
+        <a href = "{% url 'create_room' %}">Create Room</a>
+        <div>
+            
+            {% include 'base/feed.html' %}
+        </div>
+    </div>
+    </div>
+    <div>
+        {% include 'base/activity.html' %}
+    </div>
+</div>
+{% endblock content %}
